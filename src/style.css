@@ -89,6 +89,7 @@ ol, ul {
     border-radius: 8px;
     background-color: wheat;
     font-size: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35) ;
 }
 
 .home-button:hover{
