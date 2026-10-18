@@ -1,3 +1,5 @@
+import Productcard from "../components/product Card";
+
 function Shop() {
     return (
         <div className="shop-content">
@@ -5,7 +7,7 @@ function Shop() {
                 <h1>Products</h1>
             </div>
             <div className="shop-products">
-                
+                <Productcard />
             </div>
         </div>
     );

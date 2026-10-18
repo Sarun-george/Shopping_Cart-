@@ -1,32 +1,40 @@
 import { useEffect, useState } from "react";
 
 const productCard = () => {
-    const [product_title, setProduct_title] = useState(null);
-    const [product_price, setProduct_price] = useState(null);
-    const [product_image, setProduct_image] = useState(null);
+  const [products, setProducts] = useState([]);
 
-     useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-  .then(response => response.json())
-  .then((response) => setProduct_title(response[0].title))
-  .then((response) => setProduct_price(response[0].price))
-  .then((response) => setProduct_image(response[0].image))        
-    .catch((error) => console.error(error));   
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products/")
+      .then((response) => response.json())
+      .then((response) => {
+        setProducts(response);
+      })
+      .catch((error) => console.error(error));
   }, []);
 
-
-    return (
-        <div className="product-card">
-            <div className="product">
-                <div className="product-image">
-                     
-                </div>
-                <div className="product-info">
-
-                </div>
-            </div>
+  return (
+    <div className="product-card">
+      {products.map((product) => (
+        <div className="product" key={product.id}>
+          <div className="product-image">
+            {product && <img src={product.image} alt={product.title} />}
+          </div>
+          <div className="product-info">
+            <p className="product-title">{product?.title}</p>
+            <p className="product-price">${product?.price.toFixed(2)}</p>
+          </div>
+          <div className="product-count">
+            <button onclick="decrement()">-</button>
+            <h2 id="counting"></h2>
+              <button onclick="increment()">+</button>
+          </div>
+          <div className="product-cart">
+            <button>Add to Cart</button>
+          </div>
         </div>
-    );
-}
+      ))}
+    </div>
+  );
+};
 
 export default productCard;
