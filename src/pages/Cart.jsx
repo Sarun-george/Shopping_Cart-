@@ -1,11 +1,18 @@
-function Cart() {
+import { useState } from "react";
+
+const Cart = () => {
+
+    const [cart, setCart] = useState(['your cart is empty.']);
+
+    
+
     return (
         <div className="cart-content">
             <div className="cart-header">
-                <h1>Your Cart</h1>
+                <h1>Your Basket</h1>
             </div>
             <div className="cart-body">
-                <p>Your cart is empty.</p>
+                <p>{cart}</p>
             </div>
         </div>
     );

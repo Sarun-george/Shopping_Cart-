@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Product_Counter from "./product counter";
 
 const productCard = () => {
   const [products, setProducts] = useState([]);
@@ -23,11 +24,7 @@ const productCard = () => {
             <p className="product-title">{product?.title}</p>
             <p className="product-price">${product?.price.toFixed(2)}</p>
           </div>
-          <div className="product-count">
-            <button onclick="decrement()">-</button>
-            <h2 id="counting"></h2>
-              <button onclick="increment()">+</button>
-          </div>
+          <Product_Counter />
           <div className="product-cart">
             <button>Add to Cart</button>
           </div>

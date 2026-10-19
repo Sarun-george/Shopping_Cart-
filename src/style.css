@@ -157,6 +157,11 @@ ul {
   text-overflow: ellipsis;
 }
 
+.product-price {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
 .product-cart {
   display: flex;
   justify-content: center;
@@ -178,6 +183,10 @@ ul {
   justify-content: space-around;
 }
 
+.product-count p{
+  margin-top: 20px;
+}
+
 .product-count button {
   border: 2px solid #de6203;
   margin-top: 14px;
@@ -188,7 +197,6 @@ ul {
   background-color: rgb(228, 98, 18);
   font-size: 16px;
 }
-
 
 .cart-content {
   min-height: calc(100vh - 65px);
