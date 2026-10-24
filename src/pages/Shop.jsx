@@ -7,7 +7,7 @@ function Shop() {
                 <h1>Products</h1>
             </div>
             <div className="shop-products">
-                <Productcard />
+                <Productcard  addToCart={addToCart}/>
             </div>
         </div>
     );

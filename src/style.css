@@ -122,11 +122,12 @@ ul {
 .product {
   width: 100%;
   max-width: 200px;
-  height: 350px;
+  height: 360px;
   border: 1px solid #bdbaba;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
   overflow: hidden;
+  background-color: rgb(241, 213, 160);
 }
 .product-image {
   height: 200px;

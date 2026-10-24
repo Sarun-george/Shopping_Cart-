@@ -5,13 +5,20 @@ import Cart from './pages/Cart';
 import Navbar from './components/Navbar';
 
 function App() {
+
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart((prev) => [...prev, product]);
+  };
+
   return (
     <>
     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop" element={<Shop addToCart={addToCart}/>} />
+        <Route path="/cart" element={<Cart cart={cart}/>} />
       </Routes>
     </>
   );

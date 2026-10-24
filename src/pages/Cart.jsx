@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Cart = () => {
 
-    const [cart, setCart] = useState(['your cart is empty.']);
+     const [cart, setCart] = useState(['your cart is empty.']);
 
     
 

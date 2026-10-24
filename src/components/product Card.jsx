@@ -13,6 +13,13 @@ const productCard = () => {
       .catch((error) => console.error(error));
   }, []);
 
+
+  function Addproduct (product){
+    const cartItems = [];   
+      cartItems = cartItems.push(product)
+      console.log(cartItems);
+  }
+
   return (
     <div className="product-card">
       {products.map((product) => (
@@ -20,13 +27,13 @@ const productCard = () => {
           <div className="product-image">
             {product && <img src={product.image} alt={product.title} />}
           </div>
-          <div className="product-info">
+          <div className="product-info">                                                                                                                                                                                                                                                                                                                                                                                              
             <p className="product-title">{product?.title}</p>
             <p className="product-price">${product?.price.toFixed(2)}</p>
           </div>
           <Product_Counter />
           <div className="product-cart">
-            <button>Add to Cart</button>
+            <button onClick={() => Addproduct(product)}>Add to Cart</button>
           </div>
         </div>
       ))}
